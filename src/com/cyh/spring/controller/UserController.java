@@ -1,22 +1,23 @@
 package com.cyh.spring.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
-
+import com.cyh.spring.entity.User;
 import com.cyh.spring.service.IUserService;
 
-public class UserController implements Controller{
+@Controller
+@RequestMapping("/user")
+public class UserController{
+	@Autowired
 	private IUserService userService;
+	@RequestMapping("/login")
 	public String login(){
-		this.userService.getUserById(2);
-		return "success";
-	}
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		User user = this.userService.getUserById(3);
+		if(user != null){
+			return "success";
+		}
+		return "error";
 	}
 }
