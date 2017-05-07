@@ -32,7 +32,7 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 		<property name="basePackage" value="com.cyh.spring.dao"></property>
-	</bean> 
+	</bean>
 	<!--  传统的配置方式
 	<bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 	    <property name="mapperInterface" value="com.cyh.spring.dao.UserDao"></property>

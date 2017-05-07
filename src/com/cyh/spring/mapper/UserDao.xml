@@ -11,6 +11,6 @@
 	    SELECT * FROM user WHERE id=#{id}  
 	</select>
 	<insert id="addUser" parameterType="com.cyh.spring.entity.User">
-		INSERT INTO user (username,password) values (#{userName},#{password})
+		INSERT INTO user (+,password) values (#{userName},#{password})
 	</insert>
 </mapper>
